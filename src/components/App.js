@@ -10,12 +10,7 @@ function App() {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
-        setUserObj({
-          displayName: authService.currentUser.displayName
-            ? authService.currentUser.displayName
-            : "Anonymous",
-          uid: authService.currentUser.uid,
-        });
+        setUserObj(user);
       } else {
         setIsLoggedIn(false);
       }

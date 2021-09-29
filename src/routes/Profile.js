@@ -20,7 +20,7 @@ const Profile = ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     if (userObj.displayName !== newDisplayName) {
-      updateProfile(authService.currentUser, { displayName: newDisplayName });
+      updateProfile(userObj, { displayName: newDisplayName });
     }
   };
 
